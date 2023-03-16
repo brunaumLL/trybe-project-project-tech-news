@@ -16,4 +16,14 @@ def top_5_news():
 
 # Requisito 11
 def top_5_categories():
-    """Seu código deve vir aqui"""
+    db = get_collection()
+    abc = db.aggregate([
+        {"$group": {"_id": "$category", "count": {"$sum": 1}}},
+        {"$sort": {"count": -1, "_id": 1}}
+        ])
+    news_list = []
+    for a in abc:
+        if len(news_list) == 5:
+            break
+        news_list.append(a["_id"])
+    return news_list
