@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Requisito 6
 def search_by_title(title):
-    query = {"title": {"$regex": title.lower()}}
+    query = {"title": {"$regex": title, "$options": "i"}}
     news = search_news(query)
     news_list = []
     for new in news:
@@ -30,7 +30,12 @@ def search_by_date(date):
 
 # Requisito 8
 def search_by_tag(tag):
-    """Seu código deve vir aqui"""
+    query = {"tags": {"$regex": tag, "$options": "i"}}
+    news = search_news(query)
+    news_list = []
+    for new in news:
+        news_list.append((new["title"], new["url"]))
+    return news_list
 
 
 # Requisito 9
