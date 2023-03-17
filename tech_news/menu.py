@@ -10,7 +10,7 @@ from tech_news.analyzer.search_engine import (
 
 def case0():
     res = input("Digite quantas notícias serão buscadas:")
-    return get_tech_news(res)
+    return get_tech_news(int(res))
 
 
 def case1():
