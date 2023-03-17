@@ -1,24 +1,48 @@
 import sys
+from tech_news.scraper import get_tech_news
+from tech_news.analyzer.ratings import top_5_news, top_5_categories
+from tech_news.analyzer.search_engine import (
+    search_by_title, search_by_date,
+    search_by_tag,
+    search_by_category
+    )
 
 
 def case0():
-    return input("Digite quantas notícias serão buscadas:")
+    res = input("Digite quantas notícias serão buscadas:")
+    return get_tech_news(res)
 
 
 def case1():
-    return input("Digite o título:")
+    res = input("Digite o título:")
+    return search_by_title(res)
 
 
 def case2():
-    return input("Digite a data no formato aaaa-mm-dd:")
+    res = input("Digite a data no formato aaaa-mm-dd:")
+    return search_by_date(res)
 
 
 def case3():
-    return input("Digite a tag:")
+    res = input("Digite a tag:")
+    return search_by_tag(res)
 
 
 def case4():
-    return input("Digite a categoria:")
+    res = input("Digite a categoria:")
+    return search_by_category(res)
+
+
+def case5():
+    return top_5_news()
+
+
+def case6():
+    return top_5_categories()
+
+
+def case7():
+    sys.stdout.write("Encerrando script\n")
 
 
 def caseInvalid():
@@ -31,6 +55,9 @@ switch = {
     "2": case2,
     "3": case3,
     "4": case4,
+    "5": case5,
+    "6": case6,
+    "7": case7,
 }
 
 
