@@ -10,6 +10,16 @@
 
 ## Tecnologias utilizadas:
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" />
+
+## Visualizar Projeto:
+- Para ver o projeto são necessários: um Sistema Operacional Unix, Docker, Docker-compose, Python versão >= 3.8.10.
+- Tendo os requisitos necessários é preciso clonar o projeto e acessar a pasta dele via terminal.  
+- Feito isso, basta iniciar o docker com `docker-compose up -d`.
+- Em seguida é necessário acessar o container usando o comando `docker exec -it tech_news bash`.
+- Já dentro do terminal do container é necessário criar e entrar no ambiente virtual do python com o comando `python3 -m venv .venv && source .venv/bin/activate`.
+- Por fim usar o comando `pip install .` para instalar o menu.
+- Agora dentro do container com seu ambiente virtual iniciado digite o comando `tech-news-analyzer`.
+
 ## Repositório original do projeto:
 https://github.com/tryber/sd-019-b-tech-news
 
